@@ -57,12 +57,12 @@ if (!$privateInstall && !$admin) {
     </head>
     <body>
         <h1>WebPageTest <?php echo VER_WEBPAGETEST; ?> Installation Check</h1>
-        <h2>PHP</h2><ul>
+        <h2>PHP</h2><ul id="PHP">
         <?php CheckPHP(); ?>
-        </ul><h2>System Utilities</h2><ul>
+        </ul><h2>System Utilities</h2><ul id="System_Utilities">
         <?php CheckUtils(); ?>
       </ul><h2>Misc.</h2><ul>
-        </ul><h2>Filesystem</h2><ul>
+        </ul><h2>Filesystem</h2><ul id="Filesystem">
         <?php CheckFilesystem(); ?>
         </ul><h2>Test Locations</h2><ul>
         <?php CheckLocations(); ?>

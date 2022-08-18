@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master","actionsdocker"]
+  pull_request:
+    branches: [ "master","actionsdocker"]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the stack
+      run: docker-compose up -d
+    - name: Install dependencies
+      run: |
+        sudo apt-get install php
+    - name: Test
+      run: php docker/local/actions/main.php
